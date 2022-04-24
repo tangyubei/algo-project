@@ -8,7 +8,7 @@
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-            <span class="fs-4">All Pairs Shortest Paths in O(n^3/log n) Time</span>
+            <span class="fs-4">All Pairs Shortest Paths in O(<em>n<sup>3</em></sup>/log <em>n</em>) Time</span>
         </a>
 
         <ul class="nav nav-pills">
@@ -21,5 +21,45 @@
 </style>
 <body>
 <div class="viz"></div>
-<script src="network.es6"></script>
+<script src="network.js"></script>
+<script>
+    var nodes = [
+        {name: '1'},
+        {name: '2'},
+        {name: '3'},
+        {name: '4'},
+        {name: '5'},
+    ]
+
+    var links = [
+        {source: 0, target: 1, label: 3, direction: 1},
+        {source: 0, target: 2, label: 8, direction: 1},
+        {source: 0, target: 4, label: -4, direction: 1},
+        {source: 1, target: 4, label: 7, direction: 1},
+        {source: 1, target: 3, label: 1, direction: 1},
+        {source: 2, target: 1, label: 4, direction: 1},
+        {source: 3, target: 2, label: -5, direction: 1},
+        {source: 3, target: 0, label: 2, direction: 1},
+        {source: 4, target: 3, label: 6, direction: 1},
+    ]
+    var network = myNetwork(nodes,links);
+</script>
+<div class = "container">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa id neque aliquam vestibulum. Aenean vel elit scelerisque mauris pellentesque. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Elit pellentesque habitant morbi tristique senectus et. Ut faucibus pulvinar elementum integer enim. Id aliquet risus feugiat in ante metus dictum at. Varius quam quisque id diam. At tellus at urna condimentum mattis pellentesque. Vitae auctor eu augue ut. Diam volutpat commodo sed egestas egestas. Id diam maecenas ultricies mi eget mauris pharetra. Justo donec enim diam vulputate ut pharetra sit. Integer vitae justo eget magna fermentum. Lectus nulla at volutpat diam ut venenatis tellus in. Molestie a iaculis at erat. Habitant morbi tristique senectus et netus et malesuada fames ac.</p>
+<p>Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Tellus mauris a diam maecenas sed. Ac auctor augue mauris augue. Sed adipiscing diam donec adipiscing tristique. Diam quis enim lobortis scelerisque fermentum dui faucibus. Tempus quam pellentesque nec nam aliquam sem et. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Morbi blandit cursus risus at ultrices. Maecenas pharetra convallis posuere morbi leo. Nunc sed velit dignissim sodales ut eu sem. Gravida neque convallis a cras semper auctor neque vitae tempus. Placerat duis ultricies lacus sed turpis tincidunt. Id diam maecenas ultricies mi.</p>
+</div>
+<div class="grid">
+<script src="matrix.js"></script>
+<script>
+    var data = [
+        [0, 3, 8, '∞', -4],
+        ['∞', 0, '∞', 1, 7],
+        ['∞', 4, 0, '∞', '∞'],
+        [2, '∞', -5, 0, 6],
+        ['∞', '∞', '∞', 6, 0],
+    ];
+    var vertices = ['1','2','3','4','5']
+    myMatrix(data, nodes);
+</script>
+</div>
 </body>
