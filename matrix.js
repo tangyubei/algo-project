@@ -65,7 +65,8 @@ function myMatrix(data, vertices) {
     columnLabels.append("circle")
         .attr("cx", rw/2)
         .attr("cy", -270)
-        .attr("r", 12);
+        .attr("r", 12)
+        .style("fill", function(d) {return d.color});
 
     columnLabels.append("text")
         .attr("x", rw/2)
@@ -85,7 +86,8 @@ function myMatrix(data, vertices) {
     rowLabels.append("circle")
         .attr("cx",-20)
         .attr("cy", hw/2)
-        .attr("r", 12);
+        .attr("r", 12)
+        .style("fill", function(d) {return d.color});
 
     rowLabels.append("text")
         .attr("x", -20)
