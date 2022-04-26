@@ -64,7 +64,7 @@ function myMatrix(data, vertices) {
         .attr("height", height)
         .attr("x",0)
         .transition()
-        .delay(500)
+        .delay(10)
         .on('start', function repeat () {
             for (let j = 0; j<25; j++) {
                 d3.select(this)
@@ -73,7 +73,7 @@ function myMatrix(data, vertices) {
                     .duration(2000)
                     .attr("x",box[j])
                     .transition()
-                    .delay(j*100)
+                    .delay(100)
                     .style("opacity",0)
                 //.attr("transform","translate("+rw+",0)")
             }
@@ -88,7 +88,7 @@ function myMatrix(data, vertices) {
         .attr("height", hw)
         .attr("x",0)
         .transition()
-        .delay(500)
+        .delay(10)
         .on('start', function repeat () {
             for (let j = 0; j<5; j++) {
                 d3.active(this)
