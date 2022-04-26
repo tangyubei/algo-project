@@ -1,6 +1,6 @@
 function myMatrix(data, vertices) {
 
-    var margin = {top: 50, right: 100, bottom: 50, left: 100},
+    var margin = {top: 50, right: 10, bottom: 50, left: 130},
         width = 250,
         height = 250;
 
@@ -52,6 +52,82 @@ function myMatrix(data, vertices) {
         .attr("text-anchor", "middle")
         .style("font-size","14px")
         .text(function(d) { return d; })
+
+    var box = [0, rw, 2*rw, 3*rw, 4*rw, 0, rw, 2*rw, 3*rw, 4*rw,  0, rw, 2*rw, 3*rw, 4*rw,  0, rw, 2*rw, 3*rw, 4*rw,0, rw, 2*rw, 3*rw, 4*rw]
+    var highlight_horizontal = svg.append("rect")
+        .data(box)
+        .style("stroke", "black")
+        .style("stroke-width", "2px")
+        .style("fill", 'green')
+        .style("opacity", 0.25)
+        .attr("width", rw)
+        .attr("height", height)
+        .attr("x",0)
+        .transition()
+        .delay(500)
+        .on('start', function repeat () {
+            for (let j = 0; j<25; j++) {
+                d3.select(this)
+                    .transition()
+                    .delay(j*2000)
+                    .duration(2000)
+                    .attr("x",box[j])
+                    .transition()
+                    .delay(j*100)
+                    .style("opacity",0)
+                //.attr("transform","translate("+rw+",0)")
+            }
+        });
+
+    var highlight_vertical = svg.append("rect")
+        .style("stroke", "black")
+        .style("stroke-width", "2px")
+        .style("fill", 'pink')
+        .style("opacity", 0.25)
+        .attr("width", width)
+        .attr("height", hw)
+        .attr("x",0)
+        .transition()
+        .delay(500)
+        .on('start', function repeat () {
+            for (let j = 0; j<5; j++) {
+                d3.active(this)
+                    .transition()
+                    .delay(j*10000)
+                    .duration(2000)
+                    .attr("y",j*hw)
+                //.attr("transform","translate("+rw+",0)")
+            }
+        });
+
+    var highlight_cell = svg.append("rect")
+        .style("stroke", "yellow")
+        .style("stroke-width", "4px")
+        .style("fill", "none")
+        .attr("width", rw)
+        .attr("height", hw)
+        .attr("x",0)
+        .transition()
+        .delay(500)
+        .on('start', function repeat () {
+            for (let j = 0; j<5; j++) {
+                d3.active(this)
+                    .transition()
+                    .delay(j*10000)
+                    .duration(2000)
+                    .attr("y",j*hw)
+            }
+        });
+
+        // .on("start", function repeat() {
+        //     d3.select(this)
+        //         //.style("fill", "magenta")
+        //
+        //         .styleTween("transform","translate("+rw+",0)")
+        //         .transition()
+        //         .delay(1000)
+        //         .on("start",repeat)
+        // })
 
     var labels = svg.append('g')
         .attr('class', "labels");

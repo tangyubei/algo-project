@@ -1,70 +1,60 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link href="stylesheet.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="mystyle.css" rel="stylesheet">
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"/>
+            </svg>
             <span class="fs-4">All Pairs Shortest Paths in O(<em>n<sup>3</em></sup>/log <em>n</em>) Time</span>
         </a>
 
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Intro</a></li>
             <li class="nav-item"><a href="demo.html" class="nav-link">Demo</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Citations</a></li>
         </ul>
     </header>
 </div>
 </style>
 <body>
-<div class="viz"></div>
+<div class="container"><div class="viz"></div>
 <script src="network.js"></script>
+<script src="data.js"></script>
 <script>
-    var nodes = [
-        {name: '1', color:'red'},
-        {name: '2', color: 'orange'},
-        {name: '3', color:'green'},
-        {name: '4', color: 'blue'},
-        {name: '5', color: 'purple'},
-    ]
-
-    var links = [
-        {source: 0, target: 1, label: 3, direction: 2, color: 'red'},
-        {source: 2, target: 0, label: 8, direction: 1, color: 'orange'},
-        {source: 0, target: 2, label: 8, direction: 2, color: 'green'},
-        {source: 0, target: 4, label: -4, direction: 1, color: 'blue'},
-        {source: 1, target: 4, label: 7, direction: 1, color: 'purple'},
-        {source: 4, target: 1, label: 12, direction: 2, color: 'red'},
-        {source: 1, target: 3, label: 1, direction: 1, color: 'orange'},
-        {source: 2, target: 1, label: 4, direction: 1, color: 'green'},
-        {source: 3, target: 2, label: -5, direction: 1, color: 'blue'},
-        {source: 3, target: 0, label: 2, direction: 1, color: 'purple'},
-        {source: 4, target: 3, label: 6, direction: 1, color: 'red'},
-    ]
-    var network = myNetwork(nodes,links);
+    var network = myNetwork(nodes, links);
 </script>
-<div class = "container">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa id neque aliquam vestibulum. Aenean vel elit scelerisque mauris pellentesque. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Elit pellentesque habitant morbi tristique senectus et. Ut faucibus pulvinar elementum integer enim. Id aliquet risus feugiat in ante metus dictum at. Varius quam quisque id diam. At tellus at urna condimentum mattis pellentesque. Vitae auctor eu augue ut. Diam volutpat commodo sed egestas egestas. Id diam maecenas ultricies mi eget mauris pharetra. Justo donec enim diam vulputate ut pharetra sit. Integer vitae justo eget magna fermentum. Lectus nulla at volutpat diam ut venenatis tellus in. Molestie a iaculis at erat. Habitant morbi tristique senectus et netus et malesuada fames ac.</p>
-<p>Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Tellus mauris a diam maecenas sed. Ac auctor augue mauris augue. Sed adipiscing diam donec adipiscing tristique. Diam quis enim lobortis scelerisque fermentum dui faucibus. Tempus quam pellentesque nec nam aliquam sem et. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Morbi blandit cursus risus at ultrices. Maecenas pharetra convallis posuere morbi leo. Nunc sed velit dignissim sodales ut eu sem. Gravida neque convallis a cras semper auctor neque vitae tempus. Placerat duis ultricies lacus sed turpis tincidunt. Id diam maecenas ultricies mi.</p>
 </div>
-<div class="grid">
-<script src="matrix.js"></script>
-<script>
-    var data = [
-        [0, 3, 8, '∞', -4],
-        ['∞', 0, '∞', 1, 7],
-        ['∞', 4, 0, '∞', '∞'],
-        [2, '∞', -5, 0, 6],
-        ['∞', '∞', '∞', 6, 0],
-    ];
-    myMatrix(data, nodes);
-</script>
-    </div>
-<div class="grid2">
-<script src="matrix2.js"></script>
-<script>myMatrix2(data);</script>
+<div class="container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Massa id neque aliquam vestibulum. Aenean vel elit scelerisque mauris pellentesque. Tortor vitae
+        purus faucibus ornare suspendisse sed nisi lacus sed. Elit pellentesque habitant morbi tristique senectus et. Ut
+        faucibus pulvinar elementum integer enim. Id aliquet risus feugiat in ante metus dictum at. Varius quam quisque
+        id diam. At tellus at urna condimentum mattis pellentesque. Vitae auctor eu augue ut. Diam volutpat commodo sed
+        egestas egestas. Id diam maecenas ultricies mi eget mauris pharetra. Justo donec enim diam vulputate ut pharetra
+        sit. Integer vitae justo eget magna fermentum. Lectus nulla at volutpat diam ut venenatis tellus in. Molestie a
+        iaculis at erat. Habitant morbi tristique senectus et netus et malesuada fames ac.</p>
+    <p>Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Metus vulputate eu scelerisque
+        felis imperdiet proin fermentum leo. Tellus mauris a diam maecenas sed. Ac auctor augue mauris augue. Sed
+        adipiscing diam donec adipiscing tristique. Diam quis enim lobortis scelerisque fermentum dui faucibus. Tempus
+        quam pellentesque nec nam aliquam sem et. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Morbi
+        blandit cursus risus at ultrices. Maecenas pharetra convallis posuere morbi leo. Nunc sed velit dignissim
+        sodales ut eu sem. Gravida neque convallis a cras semper auctor neque vitae tempus. Placerat duis ultricies
+        lacus sed turpis tincidunt. Id diam maecenas ultricies mi.</p>
 </div>
+<div class="left_content"><div class="grid"></div>
+    <script src="matrix.js"></script>
+    <script>myMatrix(adj_mat, nodes);</script>
+</div>
+<!--<div class="right_content"><div class="grid"></div>-->
+<!--    <script src="matrix.js"></script>-->
+<!--    <script>myMatrix(adj_mat, nodes);</script>-->
+<!--</div>-->
+<!--<div class="grid2">-->
+<!--    <script src="matrix2.js"></script>-->
+<!--    <script>myMatrix2(adj_mat);</script>-->
+<!--</div>-->
 </body>
