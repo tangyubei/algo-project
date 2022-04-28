@@ -1,11 +1,11 @@
 function myNetwork(nodes, links) {
     const margin = {
-        top: 20,
+        top: 0,
         right: 20,
-        bottom: 20,
+        bottom: 0,
         left: 20,
     };
-    const width = 700 - (margin.left + margin.right);
+    const width = 500 - (margin.left + margin.right);
     const height = 350 - (margin.top + margin.bottom);
 
     const svg = d3
@@ -32,7 +32,7 @@ function myNetwork(nodes, links) {
 
     var simulation = d3.forceSimulation(nodes)
         .force("charge", d3.forceManyBody().strength(-750))
-        .force("link", d3.forceLink(links).distance(150).strength(1).iterations(30))
+        .force("link", d3.forceLink(links).distance(275).strength(1).iterations(60))
         .force("x", d3.forceX())
         .force("y", d3.forceY())
         .stop();
@@ -88,24 +88,52 @@ function myNetwork(nodes, links) {
             .attr("marker-end","url(#end-arrow)");
 */
 
-                var link_label = svg.append("g")
-                    .selectAll('text')
-                    .data(links)
-                    .join('text')
-                    .text(function(d) { return d.label })
-                    .attr("x", function(d) {
-                        if (d.target.x > d.source.x) {
-                            return (d.source.x + (d.target.x - d.source.x)/2 - 3); }
-                        else {
-                            return (d.target.x + (d.source.x - d.target.x)/2 -3); }
-                    })
-                    .attr("y", function(d) {
-                        if (d.target.y > d.source.y) {
-                            return (d.source.y + (d.target.y - d.source.y)/2 +3); }
-                        else {
-                            return (d.target.y + (d.source.y - d.target.y)/2 +3); }
-                    })
+                // var link_label = svg.append("g")
+                //     .selectAll('text')
+                //     .data(links)
+                //     .join('text')
+                //     .text(function(d) { return d.label })
+                //     .attr("x", function(d) {
+                //         if (d.target.x > d.source.x) {
+                //             return (d.source.x + (d.target.x - d.source.x)/2 - 3); }
+                //         else {
+                //             return (d.target.x + (d.source.x - d.target.x)/2 -3); }
+                //     })
+                //     .attr("y", function(d) {
+                //         if (d.target.y > d.source.y) {
+                //             return (d.source.y + (d.target.y - d.source.y)/2 +3); }
+                //         else {
+                //             return (d.target.y + (d.source.y - d.target.y)/2 +3); }
+                //     })
+        var link_label = svg.append("g")
+            .selectAll('text')
+            .data(links)
+            .join('text')
+            .text(function(d) { return d.label })
+            .attr("x", function(d) {
+                if (d.direction ==1 ) {
+                    if (d.target.x > d.source.x) {
+                        return (d.source.x + (d.target.x - d.source.x)/2 - 3); }
+                    else {
+                        return (d.target.x + (d.source.x - d.target.x)/2 -3); }
+                }
+                else {
+                    var dx = d.target.x - d.source.x,
+                        dy = d.target.y - d.source.y,
+                        dr = Math.sqrt(dx * dx + dy * dy);
+                    if (d.target.x > d.source.x) {
+                        return (d.source.x + (d.target.x - d.source.x)/2)+13; }
+                    else {
+                        return (d.target.x + (d.source.x - d.target.x)/2)+13; }
+                }
 
+            })
+            .attr("y", function(d) {
+                if (d.target.y > d.source.y) {
+                    return (d.source.y + (d.target.y - d.source.y)/2 +3); }
+                else {
+                    return (d.target.y + (d.source.y - d.target.y)/2 +3); }
+            })
 
 
         var node = svg.selectAll(".node")

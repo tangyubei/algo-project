@@ -70,23 +70,28 @@ function myMatrix2(data, vertices) {
         .text(function (d) {
             return d;
         })
-    /*
-    cell.append("text") //Add matrix elements
-        .attr("dy", ".32em")
-        .attr("x", rw / 2)
-        .attr("y", hw / 2)
-        .attr("text-anchor", "middle")
-        .style("font-size", "14px")
-        .transition() //Delay starts here
-        .delay(function (d, i) {
-            const p = local.get(this);
-            console.log("p: " + p + "; i: " + i + "; d: " + d)
-            return p * 10000 + i * (10000 / numrows);
-        })
-        .text(function (d) {
-            return d;
-        })
-        */
+
+    // Highlight box that shows next element to be calculated.
+    // var box = [0, rw, 2*rw, 3*rw, 4*rw]
+    // svg.append("rect")
+    //     .style("stroke-width","4px")
+    //     .style("stroke","yellow")
+    //     .style("fill","none")
+    //     .attr("width", rw)
+    //     .attr("height", hw)
+    //     .attr("x",0)
+    //     .transition()
+    //     .delay(500)
+    //     .on('start', function repeat () {
+    //         for (let j = 0; j<5; j++) {
+    //             d3.active(this)
+    //                 .transition()
+    //                 .delay(j*2000)
+    //                 .duration(2000)
+    //                 .attr("x",box[j])
+    //         }
+    //     });
+
 
 
     var labels = svg.append('g')

@@ -21,40 +21,15 @@
 </div>
 </style>
 <body>
-<div class="container"><div class="viz"></div>
-<script src="network.js"></script>
 <script src="data.js"></script>
-<script>
-    var network = myNetwork(nodes, links);
-</script>
+<!--<figure class="text-center"><div class="viz"></div>-->
+<!--<script src="network.js"></script>-->
+<!--<script>-->
+<!--    var network = myNetwork(nodes, links);-->
+<!--</script>-->
+<!--    <figcaption class="figure-caption text-right">Shown: A network graph.</figcaption>-->
+<div class="grid">
+    <script src="adj_mat.js"></script>
+    <script>myMatrix(L);</script>
 </div>
-<div class="container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Massa id neque aliquam vestibulum. Aenean vel elit scelerisque mauris pellentesque. Tortor vitae
-        purus faucibus ornare suspendisse sed nisi lacus sed. Elit pellentesque habitant morbi tristique senectus et. Ut
-        faucibus pulvinar elementum integer enim. Id aliquet risus feugiat in ante metus dictum at. Varius quam quisque
-        id diam. At tellus at urna condimentum mattis pellentesque. Vitae auctor eu augue ut. Diam volutpat commodo sed
-        egestas egestas. Id diam maecenas ultricies mi eget mauris pharetra. Justo donec enim diam vulputate ut pharetra
-        sit. Integer vitae justo eget magna fermentum. Lectus nulla at volutpat diam ut venenatis tellus in. Molestie a
-        iaculis at erat. Habitant morbi tristique senectus et netus et malesuada fames ac.</p>
-    <p>Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Metus vulputate eu scelerisque
-        felis imperdiet proin fermentum leo. Tellus mauris a diam maecenas sed. Ac auctor augue mauris augue. Sed
-        adipiscing diam donec adipiscing tristique. Diam quis enim lobortis scelerisque fermentum dui faucibus. Tempus
-        quam pellentesque nec nam aliquam sem et. Velit ut tortor pretium viverra suspendisse potenti nullam ac. Morbi
-        blandit cursus risus at ultrices. Maecenas pharetra convallis posuere morbi leo. Nunc sed velit dignissim
-        sodales ut eu sem. Gravida neque convallis a cras semper auctor neque vitae tempus. Placerat duis ultricies
-        lacus sed turpis tincidunt. Id diam maecenas ultricies mi.</p>
-</div>
-<div class="left_content"><div class="grid"></div>
-    <script src="matrix.js"></script>
-    <script>myMatrix(adj_mat, nodes);</script>
-</div>
-<div class="right_content"><div class="grid"></div>
-    <script src="matrix2.js"></script>
-    <script>myMatrix2(adj_mat, nodes);</script>
-</div>
-<!--<div class="grid2">-->
-<!--    <script src="matrix2.js"></script>-->
-<!--    <script>myMatrix2(adj_mat);</script>-->
-<!--</div>-->
 </body>

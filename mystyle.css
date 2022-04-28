@@ -33,18 +33,21 @@ text {
     float: left;
     height: 300px;
     width: 300px;
+
 }
 
 . left-content {
-    float: left;
+    float: right;
     height: 300px;
     width: 250px;
+    justify-content: right;
 }
 
 . right-content {
-    float: left;
+    float: right;
     height: 300px;
     width: 250px;
+    justify-content: right;
 }
 
 .b-example-divider {
@@ -79,5 +82,3 @@ text {
 .dropdown-toggle {
     outline: 0;
 }
-
-

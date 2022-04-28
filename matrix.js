@@ -30,7 +30,7 @@ function myMatrix(data, vertices) {
         .data(data)
         .enter().append("g")
         .attr("class", "row")
-        .attr("transform", function(d, i) {return "translate(0," + y(i) + ")"; });
+        .attr("transform", function(d, i) {return "translate(0," + y(i) + ")"; })
 
     var cell = row.selectAll(".cell")
         .data(function(d) { return d; })
@@ -100,6 +100,7 @@ function myMatrix(data, vertices) {
             }
         });
 
+    /* Highlighted box
     var highlight_cell = svg.append("rect")
         .style("stroke", "yellow")
         .style("stroke-width", "4px")
@@ -113,12 +114,12 @@ function myMatrix(data, vertices) {
             for (let j = 0; j<5; j++) {
                 d3.active(this)
                     .transition()
-                    .delay(j*10000)
-                    .duration(2000)
+                    .delay(j*200)
+                    .duration(200)
                     .attr("y",j*hw)
             }
         });
-
+*/
         // .on("start", function repeat() {
         //     d3.select(this)
         //         //.style("fill", "magenta")
